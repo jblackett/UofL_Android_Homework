@@ -28,6 +28,13 @@
       android:text="@string/false_button" />
 
   </LinearLayout>
+  
+  <ImageButton
+	     android:id="@+id/previous_button"
+	     android:contentDescription="@string/desc"
+	     android:layout_width="wrap_content"
+	     android:layout_height="wrap_content"
+		 android:src="@drawable/arrow_left" />
 
   <Button
     android:id="@+id/cheat_button"
@@ -36,14 +43,11 @@
     android:layout_gravity="bottom|center"
     android:text="@string/cheat_button" />
 
-  <Button
-    android:id="@+id/next_button"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_gravity="bottom|right"
-    android:text="@string/next_button"
-    android:drawableRight="@drawable/arrow_right"
-    android:drawablePadding="4dp"
-    />
+     <ImageButton 
+	     android:id="@+id/next_button"
+	     android:contentDescription="@string/desc"	     
+	     android:layout_width="wrap_content"
+	     android:layout_height="wrap_content"
+		 android:src="@drawable/arrow_right" />  
 
 </FrameLayout>

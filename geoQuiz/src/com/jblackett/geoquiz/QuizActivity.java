@@ -17,6 +17,7 @@ public class QuizActivity extends Activity {
     private ImageButton mNextButton;
     private ImageButton mPreviousButton;
     private TextView mQuestionTextView;
+    private Button mCheatButton;
     
     private static final String TAG = "QuizActivity";
     private static final String KEY_INDEX = "index";
@@ -102,6 +103,16 @@ public class QuizActivity extends Activity {
         	mCurrentIndex = savedInstanceState.getInt(KEY_INDEX, 0);
         }
         
+        mCheatButton = (Button)findViewById(R.id.cheat_button);
+        mCheatButton.setOnClickListener(new View.OnClickListener(){
+        	
+        	@Override
+        	public void onClick(View v){
+        		
+        	}
+        	
+        });
+        		
         updateQuestion();
 
     }
