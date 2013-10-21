@@ -1,6 +1,7 @@
 package com.jblackett.geoquiz;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
@@ -108,7 +109,10 @@ public class QuizActivity extends Activity {
         	
         	@Override
         	public void onClick(View v){
-        		
+        		Intent i = new Intent(QuizActivity.this, CheatActivity.class);
+        		boolean answerIsTrue = mAnswerKey[mCurrentIndex].isTrueQuestion();
+        		i.putExtra(CheatActivity.EXTRA_ANSWERIS_TRUE, answerIsTrue);
+        		startActivity(i);
         	}
         	
         });
