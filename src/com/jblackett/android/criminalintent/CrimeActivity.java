@@ -2,6 +2,8 @@ package com.jblackett.android.criminalintent;
 
 //adding/changing something so git sees me
 
+//another change for git
+
 import android.os.Bundle;
 import android.app.Activity;
 import android.view.Menu;
