@@ -1,5 +1,0 @@
-INDEX VERSION 1.126+C:\Users\admin\Documents\GitHub\UofL_Android_Homework\homework4\class7\.metadata\.plugins\org.eclipse.jdt.core
-1334165326.index
-2568162083.index
-4048554304.index
-241001824.index
