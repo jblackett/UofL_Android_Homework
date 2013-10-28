@@ -6,7 +6,7 @@ package com.jblackett.criminalintent;
 
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
-import android.view.Menu;
+
 
 public class CrimeActivity extends FragmentActivity {
 
