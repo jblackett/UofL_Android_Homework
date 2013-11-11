@@ -7,5 +7,6 @@
     <string name="hellomoon_play">Play</string>
     <string name="hellomoon_stop">Stop</string>
     <string name="hellomoon_description">Neil Armstron stepping onto the moon</string>
+    <string name="action_settings">action</string>
 
 </resources>
