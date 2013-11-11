@@ -1,6 +1,8 @@
 package com.jblackett.hellomoon.fragments;
 
-import android.R;
+
+import com.jblackett.hellomoon.R;
+
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
