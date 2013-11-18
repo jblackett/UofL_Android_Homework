@@ -3,8 +3,11 @@ package com.bignerdranch.android.criminalintent;
 import java.util.Date;
 import java.util.UUID;
 
+import android.annotation.SuppressLint;
+import android.annotation.TargetApi;
 import android.app.Activity;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -46,15 +49,22 @@ public class CrimeFragment extends Fragment {
         
         UUID crimeId = (UUID)getArguments().getSerializable(EXTRA_CRIME_ID);
         mCrime = CrimeLab.get(getActivity()).getCrime(crimeId);
+        
+        setHasOptionsMenu(true);
     }
 
     public void updateDate() {
         mDateButton.setText(mCrime.getDate().toString());
     }
 
-    @Override
+    @TargetApi(Build.VERSION_CODES.HONEYCOMB)	
+	@Override
     public View onCreateView(LayoutInflater inflater, ViewGroup parent, Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_crime, parent, false);
+        
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB){
+        	getActivity().getActionBar().setDisplayHomeAsUpEnabled(true);	
+        }
  
         mTitleField = (EditText)v.findViewById(R.id.crime_title);
         mTitleField.setText(mCrime.getTitle());
