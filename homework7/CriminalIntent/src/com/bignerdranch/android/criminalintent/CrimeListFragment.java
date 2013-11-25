@@ -7,6 +7,8 @@ import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.ListFragment;
+import android.view.ContextMenu;
+import android.view.ContextMenu.ContextMenuInfo;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -100,7 +102,7 @@ public class CrimeListFragment extends ListFragment {
     }
     
     @Override
-    public void onCreateContextMenu(ContextMenu menu, Virew v, ContextMenuInfo menuInfo){
+    public void onCreateContextMenu(ContextMenu menu, View v, ContextMenuInfo menuInfo){
     	getActivity().getMenuInflater().inflate(R.menu.crime_list_item_context, menu);
     }
 
