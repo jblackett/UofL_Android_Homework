@@ -15,6 +15,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView.AdapterContextMenuInfo;
 import android.widget.ArrayAdapter;
 import android.widget.CheckBox;
 import android.widget.ListView;
@@ -36,6 +37,22 @@ public class CrimeListFragment extends ListFragment {
         mSubtitleVisible = false;
     }
     
+    @Override
+    public boolean onContextItemSelected(MenuItem item) {
+        AdapterContextMenuInfo info = (AdapterContextMenuInfo)item.getMenuInfo();
+        int position = info.position;
+        CrimeAdapter adapter = (CrimeAdapter)getListAdapter();
+        Crime crime = adapter.getItem(position);
+
+        switch (item.getItemId()) {
+            case R.id.menu_item_delete_crime:
+                CrimeLab.get(getActivity()).deleteCrime(crime);
+                adapter.notifyDataSetChanged();
+                return true;
+        }
+        return super.onContextItemSelected(item);
+    }
+    
     @TargetApi(11)
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup parent, Bundle savedInstanceState) {
@@ -48,7 +65,15 @@ public class CrimeListFragment extends ListFragment {
         }
         
         ListView listView = (ListView)v.findViewById(android.R.id.list);
-        registerForContextMenu(listView);
+        
+        
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.HONEYCOMB){
+        	// use floating context menus on Froyo and gingerbread
+        	registerForContextMenu(listView);
+        }else {
+        	// use Contextual action bar on honeycomb and higher
+        	ListView.setChoiceMode(ListView.CHOICE_MODE_MULTIPLE_MODAL);
+        }
         
         return v;
     }
