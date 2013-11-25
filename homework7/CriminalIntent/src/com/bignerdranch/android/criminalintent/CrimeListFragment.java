@@ -98,6 +98,11 @@ public class CrimeListFragment extends ListFragment {
                 return super.onOptionsItemSelected(item);
         } 
     }
+    
+    @Override
+    public void onCreateContextMenu(ContextMenu menu, Virew v, ContextMenuInfo menuInfo){
+    	getActivity().getMenuInflater().inflate(R.menu.crime_list_item_context, menu);
+    }
 
     private class CrimeAdapter extends ArrayAdapter<Crime> {
         public CrimeAdapter(ArrayList<Crime> crimes) {
